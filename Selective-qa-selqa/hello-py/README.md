@@ -42,15 +42,15 @@ When running concurrently, results print as they complete (not in run order) for
 ## What this is
 A minimal but complete selective QA system that answers questions or abstains to meet a risk (error-rate) constraint under a token budget, using both lexical (BM25) and semantic (embedding) retrieval. It demonstrates:
 
-- * Measurement discipline: risk@coverage, ECE (calibration), EM/F1 on answered subset, token cost
+ - * Measurement discipline: risk@coverage, ECE (calibration), EM/F1 on answered subset, token cost
 
-- * Policy learning: calibrate a score→probability mapping and pick a threshold τ to decide answer vs. abstain
+ - * Policy learning: calibrate a score→probability mapping and pick a threshold τ to decide answer vs. abstain
 
-- * Budgeting: keep mean tokens per query under a target B by controlling retrieval k and answer length
+ - * Budgeting: keep mean tokens per query under a target B by controlling retrieval k and answer length
 
-- * Repeatability: calibration on train_calib.jsonl, frozen parameters on test.jsonl
+ - * Repeatability: calibration on train_calib.jsonl, frozen parameters on test.jsonl
 
-- * This pattern is used in production search/assistants, safety triage, support, medical pre-screening—anywhere “don’t guess” matters.
+ - * This pattern is used in production search/assistants, safety triage, support, medical pre-screening—anywhere “don’t guess” matters.
 
 ## Sample Run Output
 
@@ -169,10 +169,9 @@ Imports are path-safe: entry_selqa.py anchors to TASK_DIR and REPO_ROOT so you c
 1) retrieves context via **BM25** and **embeddings** (both are required),  
 2) generates an answer + a **confidence**,  
 3) **answers or abstains** to meet constraints:
-
-- **Risk** (error-rate on answered subset) ≤ **R** (e.g., 0.15)
-- **Coverage** (fraction answered) ≥ **C** (e.g., 0.80)
-- **Mean tokens/query** ≤ **B** (budget; e.g., 300)
+  - **Risk** (error-rate on answered subset) ≤ **R** (e.g., 0.15)
+  - **Coverage** (fraction answered) ≥ **C** (e.g., 0.80)
+  - **Mean tokens/query** ≤ **B** (budget; e.g., 300)
 
 **Calibration.** On `train_calib.jsonl`, learn a score→probability mapping and choose a confidence threshold **τ** to meet (R, C, B). Save to `tasks/selqa/calib.json`. Lock it for test.
 
@@ -403,4 +402,5 @@ Final grader printout:
 
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
+
 
