@@ -279,13 +279,13 @@ Expected final summary:
 
 - Confidence uses lexical/semantic signals, e.g.:
 
-- * cosine between embed(answer) and top doc(s) from each modality
+   * cosine between embed(answer) and top doc(s) from each modality
 
-- * agreement/overlap between BM25 and embedding hits
+   * agreement/overlap between BM25 and embedding hits
 
-- * lightweight question–answer overlap
+   * lightweight question–answer overlap
 
-- * (calibration may use lexical_score but test may not)
+   * (calibration may use lexical_score but test may not)
 
 - Calibration: learn/choose τ on train_calib.jsonl; saved to calib.json; frozen for test
 
@@ -295,49 +295,49 @@ Expected final summary:
 
 - Strict grader:
 
-- * per-qid retrieval usage checks
+   * per-qid retrieval usage checks
 
-- * coverage over all test qids
+   * coverage over all test qids
 
-- * mean tokens over all test qids
+   * mean tokens over all test qids
 
-- * correctness proxy via corpus normalization (synthetic but deterministic)
+   * correctness proxy via corpus normalization (synthetic but deterministic)
 
-- * pass if coverage ≥ C, risk ≤ R, mean_tokens ≤ B
+   * pass if coverage ≥ C, risk ≤ R, mean_tokens ≤ B
 
 ## Implementation details
 
 - ### Agent loop (main.py)
 
-- * Emits tool_result blocks for every tool call; never appends empty message content (prevents API errors).
+   * Emits tool_result blocks for every tool call; never appends empty message content (prevents API errors).
 
-- * submit_answer is guarded: it only succeeds when every test QID has a preds.jsonl line (prevents early exit).
+   * submit_answer is guarded: it only succeeds when every test QID has a preds.jsonl line (prevents early exit).
 
 - ### Dual-retrieval enforcement
 
-- * entry_selqa.py logs both retrieve_bm25 and retrieve_embed usage per QID into log_test.jsonl.
+   * entry_selqa.py logs both retrieve_bm25 and retrieve_embed usage per QID into log_test.jsonl.
 
-- * grade.py requires both tools to appear for each QID on test.
+   * grade.py requires both tools to appear for each QID on test.
 
 - ### Calibration vs Test
 
-- * lexical_score is permitted only in calibration (uses golds from train_calib.jsonl).
+   * lexical_score is permitted only in calibration (uses golds from train_calib.jsonl).
 
-- * Threshold τ is saved to calib.json and locked for test.
+   * Threshold τ is saved to calib.json and locked for test.
 
 - ### Cost accounting
 
-- * Retrieval tokens (from logs) + answer tokens (approx. by whitespace tokens via count_tokens).
+   * Retrieval tokens (from logs) + answer tokens (approx. by whitespace tokens via count_tokens).
 
 - ### Evaluation
 
-- * coverage = answered / total_test_qids
+   * coverage = answered / total_test_qids
 
-- * risk = 1 − accuracy_on_answered
+   * risk = 1 − accuracy_on_answered
 
-- * ece computed over answered items
+   * ece computed over answered items
 
-- * mean_tokens averaged over all test QIDs
+   * mean_tokens averaged over all test QIDs
 
 ## Tuning knobs
 
@@ -402,5 +402,6 @@ Final grader printout:
 
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
+
 
 
