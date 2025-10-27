@@ -55,7 +55,7 @@ A minimal but complete selective QA system that answers questions or abstains to
 ## Sample Run Output
 
 #### *Increasing variants_per_fact in the make_data.py file in the make_qa(variants_per_fact= ??) method, typically increases the test set size (unless capped), which can improve pass rate under fixed constraints because the allowed number of errors grows with N_test (≈ floor(R * C * N_test)). This makes meeting risk ≤ R at coverage ≥ C more forgiving. However, this also increases cost, and if the true error rate exceeds R, a larger test set can reduce pass rate by revealing that gap more reliably.* 
-
+```
 === RUN 1/10 ===
 === CAL LOG ===
 {"tool": "retrieve_bm25", "phase": "calib", "qid": "q13", "k": 5, "doc_ids": ["d7", "d6", "d16", "d2", "d4"], "tokens": 41}
@@ -134,10 +134,10 @@ A minimal but complete selective QA system that answers questions or abstains to
   "em_answered": 0.8421052631578947,
   "f1_answered": 0.8421052631578947
 }
-
+```
 
 ## Repo Layout:
-
+```
 <repo-root>/
   main.py                 # generic agent loop (Anthropic)
   README.md
@@ -156,7 +156,7 @@ A minimal but complete selective QA system that answers questions or abstains to
       log_calib.jsonl
       log_test.jsonl
       runs_summary.json   # pass-rate summary (when running multiple times)
-
+```
 Imports are path-safe: entry_selqa.py anchors to TASK_DIR and REPO_ROOT so you can run from anywhere.
 
 
@@ -238,7 +238,7 @@ or
 - set ANTHROPIC_API_KEY=sk-ant-...your-key...
 
 4) Run one pass:
-
+```
 cmd:
 
 uv run python tasks\selqa\entry_selqa.py
@@ -260,18 +260,18 @@ set RUNS=20 && uv run python ...  # You can set Runs according to your desire.
   "answered": 15,
   "total": 18
 }
-
+```
 ## Measuring pass-rate
 
 The runner aggregates multiple runs and writes tasks/selqa/runs_summary.json.
-
+```
 Expected final summary:
 {
   "runs": 20,
   "passed": 6,
   "pass_rate_pct": 30.0
 }
-
+```
 - Tune R/C/B or dataset difficulty to get better outcome.
 
 ## Design choices (what we implemented)
@@ -375,16 +375,16 @@ Grader runs from repo root so relative paths like tasks/selqa/calib.json resolve
 ...
 
 *report.json:*
-
+```
 {
   "summary": "selective QA test run",
   "estimated_coverage": 0.8,
   "estimated_mean_tokens": 210.0,
   "notes": "dual retrieval; budgeted k; answer-or-abstain"
 }
-
+```
 Final grader printout:
-
+```
 {
   "passed": true,
   "reasons": [],
@@ -398,8 +398,9 @@ Final grader printout:
   "f1_answered": 0.76
 }
 
-
+```
 ## Why this matters
 
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
+
