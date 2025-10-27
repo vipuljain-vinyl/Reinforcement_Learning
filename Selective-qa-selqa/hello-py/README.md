@@ -54,7 +54,7 @@ A minimal but complete selective QA system that answers questions or abstains to
 
 ## Sample Run Output
 
-#### *Increasing variants_per_fact typically increases the test set size (unless capped), which can improve pass rate under fixed constraints because the allowed number of errors grows with N_test (≈ floor(R * C * N_test)). This makes meeting risk ≤ R at coverage ≥ C more forgiving. However, this also increases cost, and if the true error rate exceeds R, a larger test set can reduce pass rate by revealing that gap more reliably.* 
+#### *Increasing variants_per_fact in the make_data.py file in the make_qa(variants_per_fact= ??) method, typically increases the test set size (unless capped), which can improve pass rate under fixed constraints because the allowed number of errors grows with N_test (≈ floor(R * C * N_test)). This makes meeting risk ≤ R at coverage ≥ C more forgiving. However, this also increases cost, and if the true error rate exceeds R, a larger test set can reduce pass rate by revealing that gap more reliably.* 
 
 === RUN 1/10 ===
 === CAL LOG ===
@@ -400,5 +400,6 @@ Final grader printout:
 
 
 ## Why this matters
+
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
