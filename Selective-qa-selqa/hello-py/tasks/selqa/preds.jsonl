@@ -1,0 +1,20 @@
+{"qid": "q30", "answer": "Tesla, Inc.", "decision": "answer", "confidence": 0.85, "tokens_used": 2}
+{"qid": "q17", "answer": "Water has the chemical formula H2O.", "decision": "answer", "confidence": 0.6, "tokens_used": 6}
+{"qid": "q15", "answer": "pandas is a Python library for data analysis.", "decision": "answer", "confidence": 0.7, "tokens_used": 8}
+{"qid": "q1", "answer": "The capital of France is Paris.", "decision": "answer", "confidence": 0.85, "tokens_used": 6}
+{"qid": "q2", "answer": "Australia's capital city is Canberra.", "decision": "answer", "confidence": 0.6, "tokens_used": 6}
+{"qid": "q6", "answer": "Mount Everest is Earth's highest mountain.", "decision": "abstain", "confidence": 0.378, "tokens_used": 7}
+{"qid": "q8", "answer": "Mercury is the closest planet to the Sun.", "decision": "answer", "confidence": 0.85, "tokens_used": 8}
+{"qid": "q24", "answer": "Venus is sometimes called Earth's sister planet.", "decision": "abstain", "confidence": 0.094, "tokens_used": 8}
+{"qid": "q28", "answer": "Apple Inc., a technology company founded by Steve Jobs, Steve Wozniak, and Ronald Wayne", "decision": "answer", "confidence": 0.7, "tokens_used": 26}
+{"qid": "q10", "answer": "Albert Einstein developed the theory of relativity.", "decision": "answer", "confidence": 0.95, "tokens_used": 7}
+{"qid": "q5", "answer": "The Nile is the longest river in Africa.", "decision": "answer", "confidence": 0.95, "tokens_used": 8}
+{"qid": "q7", "answer": "Mount Everest is Earth's highest mountain.", "decision": "answer", "confidence": 0.95, "tokens_used": 7}
+{"qid": "q14", "answer": "pandas is a Python library for data analysis.", "decision": "answer", "confidence": 0.85, "tokens_used": 8}
+{"qid": "q3", "answer": "Australia's capital city is Canberra.", "decision": "answer", "confidence": 0.85, "tokens_used": 6}
+{"qid": "q31", "answer": "Tesla, Inc. was founded by a group of engineers including Martin Eberhard and Marc Tarpenning.", "decision": "answer", "confidence": 0.7, "tokens_used": 15}
+{"qid": "q11", "answer": "Albert Einstein developed the theory of relativity.", "decision": "answer", "confidence": 0.9, "tokens_used": 7}
+{"qid": "q26", "answer": "Tokyo is the capital of Japan.", "decision": "answer", "confidence": 0.85, "tokens_used": 25}
+{"qid": "q0", "answer": "Paris", "decision": "answer", "confidence": 0.95, "tokens_used": 6}
+{"qid": "q21", "answer": "Amazon River flows in South America.", "decision": "answer", "confidence": 0.75, "tokens_used": 6}
+{"qid": "q19", "answer": "Beethoven composed nine symphonies.", "decision": "answer", "confidence": 0.866, "tokens_used": 4}

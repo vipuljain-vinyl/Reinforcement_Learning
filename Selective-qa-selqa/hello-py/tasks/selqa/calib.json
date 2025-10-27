@@ -1,0 +1,9 @@
+{
+  "threshold": 0.6,
+  "weights": {
+    "bm25_lexical_score": 0.4,
+    "embedding_similarity": 0.4,
+    "cross_modality_agreement": 0.2
+  },
+  "notes": "Confidence computed as max of (lexical scores, embedding similarities, retrieval agreement)"
+}

@@ -1,0 +1,71 @@
+{
+  "runs": 10,
+  "passed": 4,
+  "pass_rate_pct": 40.0,
+  "examples": [
+    {
+      "passed": true,
+      "reasons": [],
+      "coverage": 1.0,
+      "risk": 0.09999999999999998,
+      "ece": 0.10750000000000004,
+      "mean_tokens": 52.75,
+      "answered": 20,
+      "total": 20,
+      "em_answered": 0.9,
+      "f1_answered": 0.9
+    },
+    {
+      "passed": true,
+      "reasons": [],
+      "coverage": 1.0,
+      "risk": 0.09999999999999998,
+      "ece": 0.1347,
+      "mean_tokens": 52.2,
+      "answered": 20,
+      "total": 20,
+      "em_answered": 0.9,
+      "f1_answered": 0.9
+    },
+    {
+      "passed": false,
+      "reasons": [
+        "risk 0.16 > 0.15"
+      ],
+      "coverage": 0.95,
+      "risk": 0.1578947368421053,
+      "ece": 0.10526315789473678,
+      "mean_tokens": 52.3,
+      "answered": 19,
+      "total": 20,
+      "em_answered": 0.8421052631578947,
+      "f1_answered": 0.8421052631578947
+    },
+    {
+      "passed": false,
+      "reasons": [
+        "risk 0.16 > 0.15"
+      ],
+      "coverage": 0.95,
+      "risk": 0.1578947368421053,
+      "ece": 0.028947368421052645,
+      "mean_tokens": 51.95,
+      "answered": 19,
+      "total": 20,
+      "em_answered": 0.8421052631578947,
+      "f1_answered": 0.8421052631578947
+    },
+    {
+      "passed": true,
+      "reasons": [],
+      "coverage": 1.0,
+      "risk": 0.050000000000000044,
+      "ece": 0.11500000000000002,
+      "mean_tokens": 53.45,
+      "answered": 20,
+      "total": 20,
+      "em_answered": 0.95,
+      "f1_answered": 0.95
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+{"tool": "retrieve_bm25", "phase": "calib", "qid": "q13", "k": 3, "doc_ids": ["d7", "d6", "d16"], "tokens": 25}
+{"tool": "retrieve_embed", "phase": "calib", "qid": "q13", "k": 3, "doc_ids": ["d6", "d16", "d2"], "tokens": 25}
