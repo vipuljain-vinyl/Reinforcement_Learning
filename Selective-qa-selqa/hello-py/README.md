@@ -1,4 +1,4 @@
-hello-py
+Selective-qa-selqa
 ===
 
 Setup instructions:
@@ -402,6 +402,7 @@ Final grader printout:
 
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
+
 
 
 
