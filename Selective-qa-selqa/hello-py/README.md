@@ -4,14 +4,10 @@ Selective-qa-selqa
 Setup instructions:
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/preferencemodel/hello-py.git
-   ```
+   
 
 2. Navigate to the project directory:
-   ```
-   cd hello-py
-   ```
+  
 
 3. Set up `ANTHROPIC_API_KEY` environment variable:
    ```
@@ -402,6 +398,7 @@ Final grader printout:
 
 
 This project shows how to operationalize uncertainty in RAG: calibrate confidence, make principled answer/abstain decisions, and verify with tight, per-qid evaluation under realistic cost constraints. The pattern generalizes to many production setups (search, ads, safety, support, medical triage).
+
 
 
 
